@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 COPY . /code
 
 # command to run on container start
-CMD streamlit run st_narrative.py --server.baseUrlPath /run/buer/
+CMD streamlit run st_narrative.py --server.baseUrlPath /buer
