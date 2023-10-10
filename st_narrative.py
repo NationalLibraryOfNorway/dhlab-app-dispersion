@@ -77,7 +77,7 @@ else:
 
 
 title2 = st.sidebar.title("Parametere for graf")
-window = st.sidebar.number_input("Størrelse på tekst det telles i (vindu)", min_value = 300, value=500)
+window = st.sidebar.number_input("Størrelse på tekst det telles i (vindu)", min_value = 300, value=2000)
 pr = st.sidebar.number_input("Antall steg mellom hvert vindu", min_value = 100, value=100)
 
 
