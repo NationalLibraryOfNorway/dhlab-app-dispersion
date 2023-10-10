@@ -51,7 +51,7 @@ if st.session_state.corpus_upload is None:
     with st.sidebar.form(key='corpus_form'):
         doctype = st.selectbox("Velg dokumenttype", doctypes.keys(), index=2, help="Velg dokumenttype som skal inngå i korpuset.")
         fulltext = st.text_input("Som inneholder fulltekst (kan stå tomt)", placeholder="jakt AND fiske", help="""Tar bare med dokumenter som inneholder ordene i dette feltet. Spørringene kan innehold enkeltord kombinert med logiske operatorer, f.eks. jakt AND fiske_, _jakt OR fiske_, fraser som "i forhold til" eller nærhetsspørringer: _NEAR(jakt fiske, 5)_. Sistnevnte finner dokumenter hvor to ord _jakt_ and _fiske_ opptrer innenfor et vindu av fem ord.""")
-        stikkord = st.text_input('Angi noen stikkord.')
+        # stikkord = st.text_input('Angi noen stikkord.')
         from_year,to_year = st.slider('Begrens listen til årsperiode', 1800, 2022, (1980, 2020))
         freetext = st.text_input("Metadata (kan stå tomt)", placeholder="""ddc:"641.5" """, help="""Forenklet metadatasøk. Ved å søke på enkeltord eller fraser søkes innenfor alle felt i metadatabasen. Du kan begrense spørringen til enkeltflet ved å bruke nøkkel:verdi-notasjon, f.eks. title:fisk finner alle dokumenter med _fisk_ i tittelen. Felt som kan brukes i spørringen er: _title_, _authors_, _urn_, _city_, _timestamp_ (YYYYMMDD), _year (YYYY)_, _publisher_, _langs_, _subjects_, _ddc_, _genres_, _literaryform_, _doctype_. Tegnsetting kan generelt ikke brukes i søket, unntaket er i ddc. Kombinasjoner er mulig: title:fisk AND ddc:641.5.""")
         limit = st.number_input('Antall dokumenter i sample', value=1000)
